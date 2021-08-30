@@ -1,18 +1,35 @@
-# Face Mask Detection - Detekcija lica sa maskom 
+# ML Project
+## Face Mask Detector
 
-Ovaj projekt je rađen u sklopu predispitnih obaveza na kursu Mašinsko učenje na master studijama.
+**Authors:** Nađa Obrenović, Nevena Vilotić
 
-Ideja projekta je konstrukcija detektora zaštitne maske koji bi na video snimku prepoznao lice (bilo sa maskom ili bez nje), a potom ga uokvirio i ispisao odgovarajuću poruku, u zavisnosti od toga da li se na licu nalazi zaštitna maska. Opisana ideja je realizovana kroz više faza: (sad ćemo ovde ispod da metnemo neku sliku).
+**Language:** Python
 
-Za prepoznavanje lica u prvom koraku korišćen je cascade classifier (sad neko fensi objašnjenje šta je to) iz biblioteke cv2 (je l tako?). Slika lica izdvojenog primenom ovog klasifikatora se uz odgovarajuće korake pretprocesiranja (pišemo dole o tome) prosleđuje konvolutivnoj neuronskoj mreži koja će dati predikciju o tome da li se na licu nalazi maska ili ne. (Sad sledi opis onog dela kad se lice uokviri nekom bojom i ispisuje se odgovarajuća poruka, ovo ne umem baš lepo da objasnim još uvek xD).
+**Requirements:** [requirements.txt]()
 
-Trenažni i validacioni skup slika (__train__ i __valid__, redom) korišćeni prilikom obučavanja mreže i njene evaluacije preuzeti su sa sajta https://www.kaggle.com/ashishjangra27/face-mask-12k-images-dataset (baci samo pogled je l si odavde preuzela slike hahah).
+## About project
+The idea of the project is the construction of a Face Mask Detector that would, for all detected faces in the image, determine whether there is a mask on them or not.
+Face Mask Detector is a model which is based on computer vision and deep learning. It can be integrated with computer or laptop cameras.
 
-## Pretprocesiranje
+![](https://user-images.githubusercontent.com/74012107/130773556-28eb52f0-e368-4506-82eb-75a564754664.png)
 
-Pre nego što utreniramo mrežu nad slikama iz skupa __train__, svaku sliku ćemo konvertovati u grayscale (kako ovo na srpskom lepo da napišem?), a potom i promeniti njenu dimenziju na 100x100. Kako bismo ubrzali prcoes treniranja mreže, slike ćemo dodatno i normalizovati, odnosno svesti vrednosti njihovih pojedinačnih piksela na vrednosti iz intervala [0,1].
 
-## Treniranje mreže
 
-## Evaluacija
-#### Cascade Classifier
+## Literature
+[COVID-19 Face Mask Detection](https://www.dpublication.com/wp-content/uploads/2021/03/28-418.pdf)
+
+[Detect Face-Masks for COVID-19](https://www.mdpi.com/2076-3417/11/5/2070)
+
+## Dataset
+The dataset used in this project is available at [Kaggle](https://www.kaggle.com/ashishjangra27/face-mask-12k-images-dataset).
+It consists of with mask and without mask images:
+- *Train dataset* with 10 000 images (5000 face images with masks and 5000 without masks)  
+- *Validation dataset* with 800 images (400 face images with masks and 400 without masks)
+- *Test dataset* with 992 images (483 face images with masks and 509 without masks).
+
+## Project structure
+- Data Preprocessing stage
+- Training stage
+- Face Mask Detector in real-time video streams
+- Face Mask Detector in images
+
